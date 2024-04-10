@@ -1,0 +1,66 @@
+You must answer at least 4 questions, but the remaining ones are optional. The main goal of this file is to get you thinking critically about your own work, but we will also use these self reflections at the end of the semester when we do our internal review of the course.
+
+ArrayDeque:
+
+Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
+
+A: Instead of setting two pointers for one after one, making two pointer to point index 0 at the initial would make my code simpler. While setting the front pointer to 3 and the back pointer to 4 in the default constructor of ArrayDeque, setting both the front and back to 0 and move them in other methods would make the implementation less complicated.
+
+Q: What's something you felt proud of in your code, if anything?
+
+A: There is nothing I am proud with my code.
+
+Q: What's something that was particularly inelegant in your code, if anything?
+
+A: The resizing method implemented in a complex way. I separated in three ways when array size equals zero, or length of elements(items.length) or when it is smaller than the number of items divided by 4 and bigger than 8. In this case, when the array size equals eight, the error occurs. However, consider resizing array when the front pointer is placed small or equal to the back pointer and any other cases will make the resize method simple. Since the goal of the resizing array is to make a new ArrayDeque when the elements are numerous so any other cases than the front pointer is small or same with the back pointer.
+
+
+Q: What did you learn by talking to your partner about writing ArrayDeque?
+
+A: While resizing the array, changing index for the destination position can be calculated by the capacity of array subtract the array size that actually contains the item. 
+
+Q: What do you wish you would have known before writing ArrayDeque, if anything?
+
+A: The explanation was all fine. 
+
+Q: If you wrote ArrayDeque again, what would you do differently, if anything?
+
+A: Use a java util method for array copy, which is System.arraycopy(). All we have to do is making a temporary array to store items and move the pointers in the correct place for the new array. 
+
+-----
+
+LinkedListDeque:
+
+Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
+
+A: Building the default constructor in a simpler but constrained way would make my code better and concise. While creating new LinkedListDeque, it will not only assign the list size as 0, but also create the sentFront and the sentBack. As we know that the LinkedListDeque not having values, or items will only have meaning data that size is 0. 
+After size is set, the next node of the sentFront points to sentBack and the previous of the sentBack will point to the sentFront. While I used two pointers referred as first and last and initialized as null in the default constructor. 
+
+
+Q: What's something you felt proud of in your code, if anything?
+
+A: There is nothing I am proud with my code. 
+
+Q: What's something that was particularly inelegant in your code, if anything?
+
+A: Remove methods. There is no need to make the item null. Move the item in the node that will be removed in a temporary node then by moving pointers to point the previous node if the method was removeLast. This way, making null for the node would be unnecessary.
+
+Q: What did you learn by talking to your partner about writing LinkedListDeque?
+
+A: When a default constructor for LinkedListDeque is called, the method not only set the first and last node to a new node, but only map each next node of the first sentinel to point the last sentinel and the previous node of the last sentinel to point the first sentinel. So they have each sentinel's next and previous node to each other. 
+
+Q: What do you wish you would have known before writing LinkedListDeque, if anything?
+
+A: Knowing how to write recursive method efficiently with getRecursiveHelper. I write codes usually by iteration for repetitive actions, so it took some time for me to write recursive codes. Also, I implemented the getRecursive method using the temporary pointer to point the first node and used the getRecursiveHelper method. However, I think I could done better by using fewer codes for performing recursive method if I fully understood how recursive happens at that time.
+
+Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
+
+A: I would like to write Node class and the constructor of the Node class clearly. Node class only contains nodes for the previous and next and an item. The only constructor for Node sets the previous and next node and the item using 'this'. All other constructor for Node class can be removed. 
+
+-----
+
+Meta:
+
+Q: Did you like this design review process? Anything we should do differently next time?
+
+A: 
